@@ -2268,9 +2268,28 @@ set verbose off
 set print pretty on
 set print array off
 set print array-indexes on
+set print object on
 set python print-stack full
 
+# multi-process debug
+set follow-fork-mode child
+set detach-on-fork off
+# Add the pretty-printer scripts directories into GDB.                                                                                                                   
+add-auto-load-scripts-directory /usr/share/gdb/auto-load
+add-auto-load-safe-path /usr/share/gdb/auto-load
+# Options
+#source /arm/tools/gnu/gcc/7.3.0/rhe7-x86_64/lib64/libstdc++.so.6.0.24-gdb.py
+#source /project/ai/scratch01/dinzha01/workarea/tools/gcc-8.1.0/lib64/libstdc++.so.6.0.25-gdb.py
+#source /project/ai/scratch01/liuyan01/AIPU_compiler_design/src/utils/gdb-scripts/prettyprinters.py
+
+# 
 # Start ------------------------------------------------------------------------
+
+# Adjust window layout as you like (use $ tty to check tty locate)
+#da source -output /dev/pts/21
+#da stack -output /dev/pts/22
+#da stack -output /dev/pts/24
+#da -layout !assembly breakpoints !expressions !history !memory !registers source stack !threads !variables
 
 python Dashboard.start()
 
