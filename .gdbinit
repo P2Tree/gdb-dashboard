@@ -2285,13 +2285,13 @@ add-auto-load-safe-path /usr/share/gdb/auto-load
 # 
 # Start ------------------------------------------------------------------------
 
+python Dashboard.start()
+
 # Adjust window layout as you like (use $ tty to check tty locate)
 #da source -output /dev/pts/21
 #da stack -output /dev/pts/22
 #da stack -output /dev/pts/24
 #da -layout !assembly breakpoints !expressions !history !memory !registers source stack !threads !variables
-
-python Dashboard.start()
 
 # File variables ---------------------------------------------------------------
 
